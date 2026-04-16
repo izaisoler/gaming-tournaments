@@ -223,7 +223,11 @@ if ($isParticipant) {
                     <li><a href="../tournaments/create.php">Crear Torneo</a></li>
                     <li><a href="../tournaments/edit.php?id=<?php echo $tournament['id']; ?>">Editar Torneo</a></li>
                 <?php endif; ?>
+                <?php if (isLoggedIn()): ?>
                 <li><a href="../logout.php">Cerrar Sesión (<?php echo htmlspecialchars($_SESSION['username']); ?>)</a></li>
+                <?php else: ?>
+                <li><a href="../login.php">Iniciar Sesión</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
